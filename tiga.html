@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="tiga.js"></script>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+
+        form {
+            width: 85%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <form >
+        <fieldset>
+            <legend>Filter</legend>
+            <p>Nama: <input type="text" id="search" oninput="funFilterName()"></p>
+            <p>Umur: <input type="number" name="num1" id="num1" onkeyup="funFilterUmur()"> - 
+                     <input type="number" name="num2" id="num2"onkeyup="funFilterUmur()">
+            </p>
+            <p>Pekerjaan: 
+                <select name="job" id="job">
+                    
+                </select>
+            </p>
+            <p><input type="button" value="Search Job" onclick="funFilterJob()"></p>
+            <input type="radio" name="filterSex" value="Pria" checked> Pria
+            <input type="radio" name="filterSex" value="Wanita"> Wanita
+            <p><input type="button" value="Filter Gender" onclick="funFilterSex()"></p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Sorting</legend>
+            <input type="button" value="Sort Nama" onclick="sortNama()">
+            <input type="button" value="Sort Umur" onclick="sortUmur()">
+            <input type="button" value="Sort Kelamin" onclick="sortKelamin()">
+            <input type="button" value="Sort Pekerjaan" onclick="sortJob()">
+        </fieldset>
+        
+        <fieldset>
+            
+            <legend>Input Data</legend>
+            <table>
+                <td><input type="text"  id="nama"></td>
+                <td><input type="number"  id="umur"></td>
+                <td><input type="text"  id="jobInput"></td>
+                <td>
+                    <input type="radio" name="inputGender" value="Pria" checked id='filPria'>
+                     <label for="filPria">Pria</label>
+                    <input type="radio" name="inputGender" value="Wanita" id="filWanita">
+                    <label for="filWanita">Wanita</label>
+                </td>
+            </table>
+            <p><input type="button" value="Submit" onclick="funInputData()"></p>
+        </fieldset>
+        <fieldset>
+            <legend>Tabel Data</legend>
+            <table id="myTable">
+                <thead>
+                    <th>Nama</th>
+                    <th>Umur</th>
+                    <th>Kelamin</th>
+                    <th>Pekerjaan</th>
+                </thead>
+                <tbody id="here">
+                    
+                </tbody>
+            </table>
+        </fieldset>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DUA</title>
+    <script>
+        var arrNumber = [],
+            min, max, // keduanya awalnya adalah undefined
+            lanjut = true
+        
+        do {
+            var input = parseInt(prompt('Masukkan angka'))
+            
+            // Akan  bernilai true jika 'input' bernilai NaN
+            if(isNaN(input)){
+                lanjut = false
+
+            } else {
+                if(min == undefined && max == undefined){
+                    // Ketika di masukkan angka pertama
+                    min = input
+                    max = input
+                } else {
+                    if(input > max ){
+                        max = input
+                    } else if (input < min){
+                        min = input
+                    }
+                }
+
+                arrNumber.push(input)
+            }
+
+        // Akan kembali minta input jika 'lanjut' bernilai true
+        } while (lanjut);
+        
+        // Array yang sudah di sort ASC
+        arrNumber.sort((a,b)=>{ return a - b})
+        console.log(arrNumber)
+
+        // Nilai minimum
+            console.log(`Nilai Minimum ${min}`)
+        // Nilai maximum
+            console.log(`Nilai Maximum ${max}`)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

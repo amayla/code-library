@@ -1,4 +1,4 @@
-function tambah(){
+ function tambah(){
 let hasil,a,b=''
 document.getElementById("hasilangka").value=0
      a = parseInt(document.getElementById("angka1").value)

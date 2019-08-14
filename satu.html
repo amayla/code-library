@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SATU</title>
+</head>
+<body>
+    <h1>Drawing Tools</h1>
+    <p>1. Persegi</p>
+    <p>2. Segitiga siku rata kiri</p>
+    <p>3. Segitiga siku rata kanan</p>
+    <p>Jenis Bangunan: </p>
+    <p><input type="number" id="jenis" max="5"></p>
+    <p>Ukuran Bangunan: </p>
+    <p><input type="number" id="ukuran"></p>
+    <input onclick="fnLihat()" type="button" value="Lihat">
+    <p id='hasil'></p>
+
+    <script>
+        let fnLihat = () => {
+            let jenis = document.getElementById('jenis').value
+            let ukuran = document.getElementById('ukuran').value
+            let bintang = ''
+
+            if(jenis == 1){
+                // persegi
+                for(var i = 1; i <= ukuran; i++){
+
+                    // looping 'j' banyak bintang per baris
+                    for(var j = 1; j <= ukuran; j++){
+                        bintang += ' * '
+                    }
+
+                    bintang += '<br>'
+
+                }
+
+            } else if(jenis == 2){
+                // rata kiri
+                for(var i = 1; i <= ukuran; i++){
+
+                    // looping 'j' banyak bintang per baris
+                    for(var j = 1; j <= i; j++){
+                        bintang += ' * '
+                    }
+
+                    bintang += '<br>'
+
+                }
+
+            } else {
+                // rata kanan
+                for (var i = 1; i <= ukuran; i++) {
+                    for (var k = 0; k < (ukuran - i); k++) {
+                        bintang += '&nbsp&nbsp&nbsp';
+                    }
+                    for (var j = 0; j < i; j++) {
+                        bintang += '* ';
+                    }
+                    bintang += '<br/>';
+                }
+            }
+
+            document.getElementById('hasil').innerHTML = bintang
+        }
+    </script>
+</body>
+</html>
