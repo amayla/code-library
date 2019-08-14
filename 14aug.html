@@ -7,7 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Latihan 14 Agustus</title>
     <style>
-        table,th,tr,td{
+        table,
+        th,
+        tr,
+        td {
             border: 1px solid black;
             border-collapse: collapse;
         }
@@ -15,70 +18,66 @@
 </head>
 
 <body>
-        <table id="myTable">
-                <tr>
-                    <th>nama</th>
-                    <th>kota</th>
-                    <th>umur</th>
-                </tr>
-                <tr>
-                    <td id="nama1"></td>
-                    <td id="kota1"></td>
-                    <td id="umur1"></td>
-                </tr>
-                
-            </table>
+    <table id="myTable">
+        <tr>
+            <th>nama</th>
+            <th>kota</th>
+            <th>umur</th>
+        </tr>
+        <tr>
+            <td id="nama1"></td>
+            <td id="kota1"></td>
+            <td id="umur1"></td>
+        </tr>
+
+    </table>
     <script>
-        var nama 
-        
-//    do{
-//        var nama = prompt('Masukan nama anda')
-//         if (isFinite(parseInt(nama)))
-//         {
-//             alert('Masukan nama anda');
-            
-//         }
-//         else{
-//             console.log(nama)
-//             lanjut = false
-//         }
-//     } while (lanjut)
-var lanjut
-do{
-       var nama = prompt('Masukan nama anda')
-        if (isNaN(nama) == false )
-        {
-            alert('Nama anda tidak boleh angka');
-            lanjut = true
+        var nama
+
+        //    do{
+        //        var nama = prompt('Masukan nama anda')
+        //         if (isFinite(parseInt(nama)))
+        //         {
+        //             alert('Masukan nama anda');
+
+        //         }
+        //         else{
+        //             console.log(nama)
+        //             lanjut = false
+        //         }
+        //     } while (lanjut)
+        var lanjut
+        do {
+            var nama = prompt('Masukan nama anda')
+            if (isNaN(nama) == false) {
+                alert('Nama anda tidak boleh angka');
+                lanjut = true
+            } else {
+                console.log(nama)
+                var kota = prompt('Masukkan kota anda')
+                console.log(kota)
+                var lanjutUmur
+                do {
+                    var umur = prompt('Masukkan umur anda')
+                    if (!isNaN(umur) == false) {
+                        alert('Umur tidak boleh berupa huruf')
+                        lanjutUmur = true
+                    } else {
+                        console.log(umur)
+                        lanjutUmur = false
+                    }
+                } while (lanjutUmur)
+                lanjut = false
+                document.getElementById("nama1").innerHTML = nama
+                document.getElementById("kota1").innerHTML = kota
+                document.getElementById("umur1").innerHTML = umur
+
+            }
         }
-        else{
-            console.log(nama)
-            var kota = prompt('Masukkan kota anda')
-            console.log(kota)
-            var lanjutUmur
-            do{
-                var umur=prompt('Masukkan umur anda')
-                if(!isNaN(umur)==false){
-                    alert('Umur tidak boleh berupa huruf')
-                    lanjutUmur = true
-                }
-                else{
-                    console.log(umur)
-                    lanjutUmur = false
-                }
-            } while(lanjutUmur)
-            lanjut = false 
-            document.getElementById("nama1").innerHTML =nama
-            document.getElementById("kota1").innerHTML =kota
-            document.getElementById("umur1").innerHTML =umur
-           
-        }
-        }
-        
+
         while (lanjut)
-     
     </script>
-    
+
 
 </body>
 
